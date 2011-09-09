@@ -1,0 +1,37 @@
+<%= form_for(@player) do |f| %>
+  <% if @player.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@player.errors.count, "error") %> prohibited this player from being saved:</h2>
+
+      <ul>
+      <% @player.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :LastName %><br />
+    <%= f.text_field :LastName %>
+  </div>
+  <div class="field">
+    <%= f.label :FirstName %><br />
+    <%= f.text_field :FirstName %>
+  </div>
+  <div class="field">
+    <%= f.label :Nickname %><br />
+    <%= f.text_field :Nickname %>
+  </div>
+  <div class="field">
+    <%= f.label :ClubHandicap %><br />
+    <%= f.number_field :ClubHandicap %>
+  </div>
+  <div class="field">
+    <%= f.label :SOSHandicap %><br />
+    <%= f.number_field :SOSHandicap %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  LastName: MyString
+  FirstName: MyString
+  Nickname: MyString
+  ClubHandicap: 1
+  SOSHandicap: 1
+
+two:
+  LastName: MyString
+  FirstName: MyString
+  Nickname: MyString
+  ClubHandicap: 1
+  SOSHandicap: 1

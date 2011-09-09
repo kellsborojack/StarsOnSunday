@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Lastname:
+  = @player.LastName
+%p
+  %b Firstname:
+  = @player.FirstName
+%p
+  %b Nickname:
+  = @player.Nickname
+%p
+  %b Clubhandicap:
+  = @player.ClubHandicap
+%p
+  %b Soshandicap:
+  = @player.SOSHandicap
+
+= link_to 'Edit', edit_player_path(@player)
+\|
+= link_to 'Back', players_path
