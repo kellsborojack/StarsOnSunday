@@ -1,27 +1,29 @@
 %h1 Listing players
 
-%table
-  %tr
-    %th Lastname
-    %th Firstname
-    %th Nickname
-    %th Clubhandicap
-    %th Soshandicap
-    %th
-    %th
-    %th
-
-  - @players.each do |player|
+%table#players.display{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+  %thead
     %tr
-      %td= player.LastName
-      %td= player.FirstName
-      %td= player.Nickname
-      %td= player.ClubHandicap
-      %td= player.SOSHandicap
-      %td= link_to 'Show', player
-      %td= link_to 'Edit', edit_player_path(player)
-      %td= link_to 'Destroy', player, :confirm => 'Are you sure?', :method => :delete
-
+      %th Last Name
+      %th First Name
+      %th Nickname
+      %th Club Handicap
+      %th SoS Handicap
+      %th
+      %th
+      %th
+  %tbody
+    - @players.each do |player|
+      %tr
+        %td= player.LastName
+        %td= player.FirstName
+        %td= player.Nickname
+        %td= player.ClubHandicap
+        %td= player.SOSHandicap
+        %td= link_to 'Show', player
+        %td= link_to 'Edit', edit_player_path(player)
+        %td= link_to 'Destroy', player, :confirm => 'Are you sure?', :method => :delete
 %br
 
 = link_to 'New Player', new_player_path
+
+
