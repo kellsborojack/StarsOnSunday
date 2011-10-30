@@ -1,5 +1,3 @@
-%h1 Listing players
-
 %table#players.display{:border => "0", :cellpadding => "0", :cellspacing => "0"}
   %thead
     %tr
@@ -8,9 +6,9 @@
       %th Nickname
       %th Club Handicap
       %th SoS Handicap
-      %th
-      %th
-      %th
+      - if can? :update, @player
+        %th Edit
+        %th Delete
   %tbody
     - @players.each do |player|
       %tr
@@ -19,11 +17,17 @@
         %td= player.Nickname
         %td= player.ClubHandicap
         %td= player.SOSHandicap
-        %td= link_to 'Show', player
-        %td= link_to 'Edit', edit_player_path(player)
-        %td= link_to 'Destroy', player, :confirm => 'Are you sure?', :method => :delete
+        - if can? :update, @player
+          %td= link_to 'Edit', edit_player_path(player)
+          %td= link_to 'Delete', player, :confirm => 'Are you sure?', :method => :delete
 %br
+- if can? :update, @player
+  #DefaultStateButton
+    = link_to 'New Player', new_player_path
 
-= link_to 'New Player', new_player_path
+
+
+
+
 
 

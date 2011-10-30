@@ -1,25 +1,11 @@
-= form_for @player do |f|
-  -if @player.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@player.errors.count, "error")} prohibited this player from being saved:"
-      %ul
-        - @player.errors.full_messages.each do |msg|
-          %li= msg
+= semantic_form_for(@player) do |f|
+  = render "shared/error_messages", :target => @player
+  = f.inputs do
+    = f.input :LastName, :label =>"Last Name", :required => true
+    = f.input :FirstName, :label =>"First Name", :required => true
+    = f.input :Nickname, :label =>"Nickname"
+    = f.input :ClubHandicap, :label =>"Club Handicap"
+    = f.input :SOSHandicap, :label =>"SOS Handicap"
 
-  .field
-    = f.label :LastName
-    = f.text_field :LastName
-  .field
-    = f.label :FirstName
-    = f.text_field :FirstName
-  .field
-    = f.label :Nickname
-    = f.text_field :Nickname
-  .field
-    = f.label :ClubHandicap
-    = f.number_field :ClubHandicap
-  .field
-    = f.label :SOSHandicap
-    = f.number_field :SOSHandicap
-  .actions
-    = f.submit 'Save'
+  = f.buttons do
+    = f.commit_button :button_html => { :class => "ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" }

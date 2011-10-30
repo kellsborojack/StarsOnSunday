@@ -1,7 +1,15 @@
 StarsOnSunday::Application.routes.draw do
-  get "home/index"
 
   resources :players
+  resources :sessions
+  resources :profiles
+
+  devise_for :users, :skip => :all
+
+  post "/users/sign_in"    => "sessions#create"
+  delete "/users/sign_out" => "sessions#destroy"
+
+  get "home/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

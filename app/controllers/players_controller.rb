@@ -1,4 +1,9 @@
 class PlayersController < ApplicationController
+
+  before_filter :authenticate_user!
+
+  load_and_authorize_resource
+
   # GET /players
   # GET /players.json
   def index
