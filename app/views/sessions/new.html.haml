@@ -1,0 +1,8 @@
+%h3 Please sign with your email address and password
+= semantic_form_for @user, :url => users_sign_in_path do |f|
+  = f.inputs do
+    = f.input :email, :label =>"Email", :required => true
+    = f.input :password, :label =>"Password", :required => true
+
+    = f.buttons do
+      = f.commit_button :label => "Sign in", :button_html => { :class => "ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" }

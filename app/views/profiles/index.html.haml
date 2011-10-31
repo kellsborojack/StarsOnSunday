@@ -1,0 +1,29 @@
+%h1 Listing profiles
+
+%table
+  %tr
+    %th Nickname
+    %th Address
+    %th Homephoneno
+    %th Mobileno
+    %th Mainemailaddress
+    %th Backupemailaddress
+    %th
+    %th
+    %th
+
+  - @profiles.each do |profile|
+    %tr
+      %td= profile.Nickname
+      %td= profile.Address
+      %td= profile.HomePhoneNo
+      %td= profile.MobileNo
+      %td= profile.MainEmailAddress
+      %td= profile.BackupEmailAddress
+      %td= link_to 'Show', profile
+      %td= link_to 'Edit', edit_profile_path(profile)
+      %td= link_to 'Destroy', profile, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Profile', new_profile_path

@@ -1,0 +1,24 @@
+%p
+  %b Nickname:
+  = @profile.Nickname
+%p
+  %b Address:
+  = @profile.Address
+%p
+  %b Homephoneno:
+  = @profile.HomePhoneNo
+%p
+  %b Mobileno:
+  = @profile.MobileNo
+%p
+  %b Mainemailaddress:
+  = @profile.MainEmailAddress
+%p
+  %b Backupemailaddress:
+  = @profile.BackupEmailAddress
+
+%p
+  = link_to 'Edit', edit_profile_path(@profile)
+  \|
+  = link_to 'Back', profiles_path
+

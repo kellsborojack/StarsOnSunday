@@ -1,0 +1,7 @@
+%h3 Editing profile for #{current_user.email}
+
+= render 'form'
+
+= link_to 'Show', @profile
+\|
+= link_to 'Back', profiles_path

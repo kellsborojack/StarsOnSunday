@@ -1,0 +1,14 @@
+= semantic_form_for @profile do |f|
+  = render "shared/error_messages", :target => @profile
+  = f.inputs do
+    = f.input :Nickname, :label =>"Nickname"
+    = f.input :Address, :label =>"Address"
+    = f.input :HomePhoneNo, :label =>"Home Phone Number"
+    = f.input :MobileNo, :label =>"Mobile Number"
+    = f.input :BackupEmailAddress, :label =>"Other Email Address"
+
+  = f.buttons do
+    = f.commit_button :label => "Update", :button_html => { :class => "ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" }
+
+
+
